@@ -1,9 +1,9 @@
-#Problem : https://edabit.com/challenge/gt9LLufDCMHKMioh2
+#Problem 1: https://edabit.com/challenge/gt9LLufDCMHKMioh2
 def stutter(word):
 	lst = list(word)
 	return(lst[0]+lst[1]+'... '+lst[0]+lst[1]+'... '+word+'?')
   
-  '''actual_param, expected_param = [
+ actual_param, expected_param = [
 	"increasing", "adventures", "enticing", "unacceptable", "accountable", "incredible", "exquisite",
 	"am", "enduring", "outstanding", "astonishing", "astounding", "impressive", "revolutionize",
 	"recurring", "recollection", "so", "gorgeous", "captivating"
@@ -16,5 +16,131 @@ def stutter(word):
 ]
 for i, w in enumerate(actual_param):
 	Test.assert_equals(stutter(w), expected_param[i])
- '''
  
+ #Problem 2: https://edabit.com/challenge/cXnkmRdxqJrwdsP4n
+ def dis(price, discount):
+	return(price*(100-discount)/100)
+
+Test.assert_equals(dis(100, 75), 25)
+Test.assert_equals(dis(211, 50), 105.5)
+Test.assert_equals(dis(593, 61), 231.27)
+Test.assert_equals(dis(1693, 80), 338.6)
+Test.assert_equals(dis(700, 10), 630)
+
+Problem 3: https://edabit.com/challenge/2X2uZysLJ3CpsxLDD
+def radians_to_degrees(rad):
+	from math import pi
+	a = rad/pi*180
+	a = float('{:.1f}'.format(a))
+	return(a)
+Test.assert_equals(radians_to_degrees(1), 57.3)
+Test.assert_equals(radians_to_degrees(5), 286.5)
+Test.assert_equals(radians_to_degrees(7), 401.1)
+Test.assert_equals(radians_to_degrees(60), 3437.7)
+Test.assert_equals(radians_to_degrees(100), 5729.6)
+Test.assert_equals(radians_to_degrees(180), 10313.2)
+
+Problem 4: https://edabit.com/challenge/KjCS7occ9hfu5snpb
+def addition(num):
+	return(num+1)
+Test.assert_equals(addition(2), 3, "2 plus 1 equals 3.")
+Test.assert_equals(addition(-9), -8, "-8 plus 1 equals 9.")
+Test.assert_equals(addition(0), 1, "0 plus 1 equals 1.")
+Test.assert_equals(addition(999), 1000, "999 plus 1 equals 1000.")
+Test.assert_equals(addition(73), 74, "73 plus 1 equals 74.")
+
+Problem 5: https://edabit.com/challenge/aWLTzrRsrw7RakYrN
+def tri_area(base, height):
+	return(0.5*base*height)
+Test.assert_equals(tri_area(3, 2), 3)
+Test.assert_equals(tri_area(5, 4), 10)
+Test.assert_equals(tri_area(10, 10), 50)
+Test.assert_equals(tri_area(0, 60), 0)
+Test.assert_equals(tri_area(12, 11), 66)
+
+Problem 6:https://edabit.com/challenge/WXqH9qvvGkmx4dMvp
+def fizz_buzz(num):
+	if(num%3 == 0 and num%5 != 0):
+		return("Fizz")
+	if(num%5 == 0 and num%3 != 0):
+		return("Buzz")
+	if(num%3 == 0 and num%5 == 0):
+		return("FizzBuzz")
+	return(str(num))
+Test.assert_equals(fizz_buzz(3), "Fizz", "You gave " + fizz_buzz(3) + " and Fizz was needed")
+Test.assert_equals(fizz_buzz(5), "Buzz", "You gave " + fizz_buzz(5) + " and Buzz was needed")
+Test.assert_equals(fizz_buzz(15), "FizzBuzz", "You gave " + fizz_buzz(15) + " and FizzBuzz was needed")
+Test.assert_equals(fizz_buzz(10), "Buzz", "You gave " + fizz_buzz(10) + " and Buzz was needed")
+Test.assert_equals(fizz_buzz(98), "98", "You gave " + fizz_buzz(98) + " and 98 was needed")
+
+Problem 7: https://edabit.com/challenge/CjXamaNRmKxwkmBxq
+def cubes(a):
+	return a ** 3
+Test.assert_equals(cubes(2), 8)
+Test.assert_equals(cubes(3), 27)
+Test.assert_equals(cubes(4), 64)
+Test.assert_equals(cubes(5), 125)
+Test.assert_equals(cubes(10), 1000)
+
+Problem 8: https://edabit.com/challenge/NNhkGocuPMcryW7GP
+def square_areas_difference(r):
+	
+	s_big = (2*r)**2
+	sqrt = 2**0.5
+	s_small = (r*sqrt)**2
+	return(round(s_big-s_small))
+
+Test.assert_equals(square_areas_difference(5), 50)
+Test.assert_equals(square_areas_difference(6), 72)
+Test.assert_equals(square_areas_difference(7), 98)
+Test.assert_equals(square_areas_difference(17), 578)
+
+Problem 8:https://edabit.com/challenge/YfoKQWNeYETb9PYpw
+def profit(info):
+	return(round((info['sell_price']-info['cost_price'])*info['inventory']))
+	
+Test.assert_equals(profit({'cost_price': 32.67, 'sell_price': 45.00, 'inventory': 1200}), 14796)
+Test.assert_equals(profit({'cost_price': 0.1, 'sell_price': 0.18, 'inventory': 259800}), 20784)
+Test.assert_equals(profit({'cost_price': 185.00, 'sell_price': 299.99, 'inventory': 300}), 34497)
+Test.assert_equals(profit({'cost_price': 378.11, 'sell_price': 990.00, 'inventory': 99}), 60577)
+Test.assert_equals(profit({'cost_price': 4.67, 'sell_price': 5.00, 'inventory': 78000}), 25740)
+Test.assert_equals(profit({'cost_price': 19.87, 'sell_price': 110.00, 'inventory': 350}), 31546)
+Test.assert_equals(profit({'cost_price': 2.91, 'sell_price': 4.50, 'inventory': 6000}), 9540)
+Test.assert_equals(profit({'cost_price': 68.01, 'sell_price': 149.99, 'inventory': 500}), 40990)
+Test.assert_equals(profit({'cost_price': 1.45, 'sell_price': 8.50, 'inventory': 10000}), 70500)
+Test.assert_equals(profit({'cost_price': 10780, 'sell_price': 34999, 'inventory': 10}), 242190)
+
+Problem 9: https://edabit.com/challenge/8pDH2SRutPoaQghgc
+def relation_to_luke(name):
+	if(name == 'Darth Vader'):
+		a = 'father.'
+	if(name == 'Leia'):
+		a = 'sister.'
+	if(name == 'Han'):
+		a = 'brother in law.'
+	if(name == 'R2D2'):
+		a = 'droid.'
+	return('Luke, I am your '+ a)
+Test.assert_equals(relation_to_luke("Darth Vader"), "Luke, I am your father.")
+Test.assert_equals(relation_to_luke("Leia"), "Luke, I am your sister.")
+Test.assert_equals(relation_to_luke("Han"), "Luke, I am your brother in law.")
+Test.assert_equals(relation_to_luke("R2D2"), "Luke, I am your droid.")
+
+# Author : Jeroen Ndh
+Problem 10: https://edabit.com/challenge/FF6kYPHdAcJnoosr5
+def factorial(num):
+	a = 1
+	for i in range(num):
+		i = i + 1
+		a = a*i
+		
+	return a
+	
+Test.assert_equals(factorial(2), 2)
+Test.assert_equals(factorial(6), 720)
+Test.assert_equals(factorial(3), 6)
+Test.assert_equals(factorial(12), 479001600)
+Test.assert_equals(factorial(5), 120)
+
+	
+
